@@ -25,7 +25,7 @@ const agentDetails = {
   /** @type {string} Agent's primary contact email address. Used in Footer, Contact forms/sidebars. */
   email: "sellwithmavel@gmail.com",
   /** @type {string} Agent's primary office address. */
-  address: "500 - 36 Distillery LaneToronto, ON M5A 3C4",
+  address: "500 - 36 Distillery Lane, Toronto, ON M5A 3C4",
   /** @type {string} Name of the brokerage the agent is affiliated with. */
   brokerageName: "Property.ca Inc.",
   /** @type {string} URL for the standard agent headshot from AWS. */
