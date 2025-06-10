@@ -219,7 +219,7 @@ export const siteContent = {
      */
     items: [
       // Guidance: Provide 3 genuine-sounding testimonials (~2-4 sentences / 150-300 chars each). Use placeholder avatar paths.
-      { id: 1, description: `${agentDetails.name} made buying our first home in ${agentDetails.location} so easy! His knowledge and patience were invaluable. Highly recommended!`, avatar: "/images/avatar/testimonials-3.jpg", name: "Sarah & Tom P.", role: `First-Time Homebuyers, ${agentDetails.location}` }, // Dynamically constructed
+      { id: 1, description: `${agentDetails.name} made buying our first home in ${agentDetails.location} so easy! Her knowledge and patience were invaluable. Highly recommended!`, avatar: "/images/avatar/testimonials-3.jpg", name: "Sarah & Tom P.", role: `First-Time Homebuyers, ${agentDetails.location}` }, // Dynamically constructed
       { id: 2, description: `Selling our house with ${agentDetails.firstName} was a great experience. He got us a fantastic price and handled everything professionally. Thanks, ${agentDetails.firstName}!`, avatar: "/images/avatar/testimonials-2.jpg", name: "David R.", role: `Home Seller, ${agentDetails.location}` }, // Dynamically constructed
       { id: 3, description: `As an investor, I rely on ${agentDetails.firstName}'s expertise of the ${agentDetails.location} market. He consistently finds great opportunities. A true professional.`, avatar: "/images/avatar/testimonials-4.jpg", name: "Priya K.", role: "Real Estate Investor" } // Dynamically constructed
     ]

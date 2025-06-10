@@ -18,7 +18,7 @@ export default function Faqs() {
   // New Q&A Data for Mike Henry, grouped by category
   const faqCategories = [
     {
-      title: `About ${siteContent.agent.firstName} & His Services`,
+      title: `About ${siteContent.agent.firstName} & Her Services`,
       idPrefix: "faq-serv",
       questions: [
         {
