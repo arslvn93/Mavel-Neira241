@@ -38,10 +38,9 @@ const agentDetails = {
    */
   socialLinks: [
     // Provide actual URLs for the agent's profiles
-    { name: "Facebook", url: "#", iconClass: "icon-fb" },
-    { name: "Twitter", url: "#", iconClass: "icon-X" },
-    { name: "LinkedIn", url: "#", iconClass: "icon-linked" },
-    { name: "Instagram", url: "#", iconClass: "icon-ins" }
+    { name: "Facebook", url: "https://www.facebook.com/sellwithmavel", iconClass: "icon-fb" },
+    { name: "LinkedIn", url: "https://ca.linkedin.com/in/mavel-neira-383a61310", iconClass: "icon-linked" },
+    { name: "Instagram", url: "https://instagram.com/sellwithmavel", iconClass: "icon-ins" }
   ]
 };
 
