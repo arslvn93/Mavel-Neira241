@@ -47,7 +47,7 @@ export default function Facts() {
                   <div className="count">
                     <div className="icons"><i className="icon-user-2" /></div> {/* Example icon */}
                     <div className="counter-number">
-                      <div className="odometer style-2 style-2-1"><OdometerComponent max={900} /></div> {/* Placeholder value */}
+                      <div className="odometer style-2 style-2-1"><OdometerComponent max={250} /></div> {/* Placeholder value */}
                       <span className="sub plus">+</span>
                     </div>
                     <p className="text-4">{siteContent.loanProcess.factsCounter1Label}</p>
