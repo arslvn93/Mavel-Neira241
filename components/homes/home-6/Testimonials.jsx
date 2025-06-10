@@ -53,7 +53,7 @@ export default function Testimonials() {
                 <div className="wg-testimonial style-5">
                   <p className="text-11 description text_white fw-3">
                     {/* Dynamically construct testimonial if it contains the agent's name */}
-                    {slide.id === 2 ? `Selling our house with ${siteContent.agent.firstName} was a great experience. He got us a fantastic price and handled everything professionally. Thanks, ${siteContent.agent.firstName}!` : slide.description}
+                    {slide.id === 2 ? `Selling our house with ${siteContent.agent.firstName} was a great experience. She got us a fantastic price and handled everything professionally. Thanks, ${siteContent.agent.firstName}!` : slide.description}
                   </p>
                   <div className="author">
                     <div className="avatar">
