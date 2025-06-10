@@ -1,0 +1,166 @@
+@use "../abstracts/mixin";
+@use "../abstracts/variable";
+
+.nice-select {
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--White);
+    border: 1px solid var(--Line);
+    color: var(--Text);
+    border-radius: 3px;
+    height: 54px;
+    padding: 16px;
+    box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 18.75px;
+    font-weight: 400;
+    outline: none;
+    position: relative;
+    transition: all linear 0.2s;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+    border-radius: 16px;
+    position: relative;
+    &::after {
+        content: "\e926";
+        font-family: variable.$fontIcon;
+        right: 10px;
+        font-size: 8px;
+        top: 50%;
+        color: var(--Heading);
+        position: absolute;
+        transform: translateY(-50%) rotate(0);
+        @include mixin.transition3();
+        z-index: 1;
+    }
+    > span {
+        font-weight: 400;
+    }
+    > .list {
+        position: absolute;
+        background-color: var(--White);
+        border-radius: 5px;
+        box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+        box-sizing: border-box;
+        margin-top: 4px;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        -webkit-transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-transform: scale(0.75) translateY(-21px);
+        -ms-transform: scale(0.75) translateY(-21px);
+        transform: scale(0.75) translateY(-21px);
+        -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25),
+            opacity 0.15s ease-out;
+        transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25),
+            opacity 0.15s ease-out;
+        z-index: 9;
+        width: 100%;
+        font-size: 14px;
+        max-height: 155px;
+        overflow: auto;
+        z-index: 1;
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 4px;
+            background-color: #f5f5f5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #a7a7a7;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+        }
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+            background-color: #f5f5f5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+        }
+        .option {
+            width: 100%;
+            padding: 10px 10px;
+            color: var(--Text);
+            position: relative;
+
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.12);
+            }
+            &.selected {
+                color: var(--Main-color);
+                background-color: rgba(0, 0, 0, 0.12);
+                &::after {
+                    position: absolute;
+                    font-family: variable.$fontIcon !important;
+                    content: "\e918";
+                    right: 18px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    &.open {
+        border-color: var(--Line) !important;
+        z-index: 99;
+        &::after {
+            transform: translateY(-50%) rotate(-180deg);
+        }
+        .list {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+            pointer-events: auto;
+            -webkit-transform: scale(1) translateY(0);
+            -ms-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+            width: 100%;
+            -moz-transform: scale(1) translateY(0);
+            -o-transform: scale(1) translateY(0);
+        }
+    }
+    &.select-sort {
+        padding-right: 30px !important;
+        &::after {
+            top: 50%;
+            transform: translateY(-50%);
+            right: 18px;
+        }
+        &.open {
+            &::after {
+                transform: translateY(-50%) rotate(-180deg);
+            }
+        }
+        &.style-2 {
+            > .list {
+                right: 0;
+                left: unset;
+            }
+        }
+    }
+}

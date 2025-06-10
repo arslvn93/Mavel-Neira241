@@ -1,0 +1,217 @@
+@use "../abstracts/mixin";
+
+.tf-btn {
+    font-size: 16px;
+    line-height: 22.4px;
+    height: 50px;
+    background-color: var(--White);
+    @include mixin.flex(center, center);
+    @include mixin.transition5();
+    border-radius: 16px;
+    color: var(--Text-white);
+    width: max-content;
+    gap: 10px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: var(--Secondary);
+        @include mixin.transition5();
+        width: 0;
+        height: 100%;
+        left: -5%;
+        border-radius: 12px;
+        z-index: -1;
+    }
+    i {
+        font-size: 24px;
+    }
+    &.pd-1 {
+        padding: 0 23.5px;
+    }
+    &.pd-2 {
+        padding: 0 26.5px;
+    }
+    &.pd-3 {
+        padding: 0 40px;
+    }
+    &.pd-4 {
+        padding: 0 28px;
+    }
+    &.pd-5 {
+        padding: 0 41.5px;
+    }
+    &.pd-6 {
+        padding: 0 28.5px;
+    }
+    &.pd-7 {
+        padding: 0 44.5px;
+    }
+    &.pd-8 {
+        padding: 0 24px;
+    }
+    &.pd-9 {
+        padding: 0 20.5px;
+    }
+    &.pd-10 {
+        padding: 0 20px;
+    }
+    &.pd-11 {
+        padding: 0 26px;
+    }
+    &.pd-12 {
+        padding: 0 52px;
+    }
+    &.pd-13 {
+        padding: 0 31.5px;
+    }
+    &.pd-14 {
+        padding: 0 57px;
+    }
+    &.pd-15 {
+        padding: 0 27px;
+    }
+    &.pd-16 {
+        padding: 0 70px;
+    }
+    &.pd-17 {
+        padding: 0 56px;
+    }
+    &.pd-18 {
+        padding: 0 64px;
+    }
+    &.pd-19 {
+        padding: 0 48px;
+    }
+    &.pd-20 {
+        padding: 0 33.5px;
+    }
+    &.pd-21 {
+        padding: 0 32.5px;
+    }
+    &.pd-22 {
+        padding: 0 19.5px;
+    }
+    &.pd-23 {
+        padding: 0 23px;
+    }
+    &.pd-24 {
+        padding: 0 18.5px;
+    }
+    &.pd-25 {
+        padding: 0 29.5px;
+    }
+    &.pd-26 {
+        padding: 0 24px;
+    }
+    &.pd-27 {
+        padding: 0 36px;
+    }
+    &.btn-border {
+        border: 1px solid var(--Primary);
+    }
+    &.bg-color-primary {
+        background-color: var(--Primary);
+    }
+    &.bg-color-white {
+        background-color: var(--White);
+        color: var(--Primary);
+    }
+    &.bg-color-secondary {
+        background-color: var(--Secondary);
+       
+    }
+    &.style-border {
+        border: 1px solid var(--Primary);
+        color: var(--Primary);
+        background-color: transparent;
+        &::after {
+            background-color: var(--Primary);
+        }
+        &:hover {
+   
+            color: var(--Text-white) !important;
+            svg path {
+                stroke: var(--Text-white);
+            }
+        }
+        &.color-white {
+            color: var(--Text-white);
+            border-color: var(--Text-white);
+            &:hover {
+                border-color: var(--Primary);
+                color: var(--Text-white);
+                svg path {
+                    stroke: var(--Text-white);
+                }
+                i {
+                    color: var(--Text-white);
+                }
+            }
+        }
+        &.border2 {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+    &.style-2 {
+        background-color: var(--Text-white);
+        color: var(--Primary);
+    }
+    &.btn-border {
+        border: 1px solid var(--Primary);
+    }
+    &:hover {
+        background-color: transparent;
+        color: var(--Text-white) !important;
+        &::after {
+            width: 115%;
+        }
+    }
+}
+
+.tf-btn-link {
+    @include mixin.d-flex();
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--Primary);
+    gap: 8px;
+    width: max-content;
+    span {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            width: 0;
+            left: 0;
+            bottom: -1px;
+            background: var(--Primary);
+            height: 2px;
+            @include mixin.transition3();
+        }
+    }
+    i {
+        @include mixin.transition3();
+        transition-delay: 0.2s;
+    }
+    &:hover {
+        span {
+            &::after {
+                width: 100%;
+            }
+        }
+        i {
+            transform: translateX(4px);
+        }
+    }
+    &.style-hover-rotate {
+        &:hover {
+            svg {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

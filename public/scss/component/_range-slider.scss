@@ -1,0 +1,161 @@
+@use "../abstracts/mixin";
+
+.noUi-target,
+.noUi-target * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-touch-action: none;
+    touch-action: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.noUi-target {
+    position: relative;
+    direction: ltr;
+}
+
+.noUi-base {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background: var(--Line);
+}
+
+.noUi-origin {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.noUi-handle {
+    position: relative;
+    z-index: 1;
+}
+
+.noUi-stacking .noUi-handle {
+    z-index: 10;
+}
+
+.noUi-state-tap .noUi-origin {
+    -webkit-transition: left 0.3s, top 0.3s;
+    transition: left 0.3s, top 0.3s;
+}
+
+.noUi-state-drag * {
+    cursor: inherit !important;
+}
+
+.noUi-base,
+.noUi-handle {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.noUi-horizontal {
+    height: 4px;
+}
+
+.noUi-horizontal .noUi-handle {
+    position: relative;
+    width: 22px !important;
+    height: 22px;
+    border-radius: 50%;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--Primary);
+    border: 2px solid var(--White);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.caption {
+    margin-bottom: 10px;
+}
+
+/* Styling; */
+.noUi-background {
+    background: var(--Line);
+}
+
+.noUi-connect {
+    background: var(--Primary);
+    -webkit-transition: background 450ms;
+    transition: background 450ms;
+}
+
+.noUi-origin {
+    border-radius: 0px;
+}
+
+.noUi-target {
+    width: 100%;
+    padding-right: 10px;
+}
+
+
+/* Handles and cursors;
+ */
+.noUi-draggable {
+    cursor: w-resize;
+}
+
+.noUi-vertical .noUi-draggable {
+    cursor: n-resize;
+}
+
+.noUi-handle {
+    cursor: default;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+/* Disabled state; */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+    background: #b8b8b8;
+}
+
+[disabled].noUi-origin,
+[disabled] .noUi-handle {
+    cursor: not-allowed;
+}
+.slider-labels .caption {
+    font-weight: 500;
+    font-size: 16px;
+}
+.widget-price{
+    .box-title-price{
+        @include mixin.d-flex();
+        gap: 4px;
+        span{
+            font-size: 14px;
+            line-height: 19.6px;
+            color: var(--Heading);
+        }
+    }
+    .caption-price{
+        .value{
+            color: var(--Primary);
+        }
+    }
+    &.style-2{
+        .box-title-price{
+            color: rgba(92, 94, 97, 1);
+            span{
+                font-size: 14px;
+                line-height: 22px;
+                color: rgba(92, 94, 97, 1);
+            }
+        }
+    }
+}

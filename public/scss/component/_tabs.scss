@@ -1,0 +1,133 @@
+@use "../abstracts/mixin";
+
+.flat-animate-tab {
+    overflow: hidden;
+    .tab-content {
+        position: relative;
+    }
+    .tab-pane {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        transform: translateY(30px);
+        transition-timing-function: ease-in;
+        transition-duration: 0.2s;
+        &.active {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
+        }
+    }
+}
+
+.widget-tabs {
+    .widget-menu-tab {
+        @include mixin.d-flex();
+        justify-content: center;
+    }
+    .item-title {
+        @include mixin.transition3();
+        cursor: pointer;
+    }
+    &.style-1 {
+        .widget-menu-tab {
+            margin-bottom: 29px;
+            gap: 10px;
+            .item-title {
+                cursor: pointer;
+                font-size: 16px;
+                line-height: 20px;
+                width: 122px;
+                height: 50px;
+                font-weight: 600;
+                @include mixin.flex(center, center);
+                background-color: var(--White);
+                border-radius: 16px;
+                color: var(--Heading);
+                &.active,
+                &:hover {
+                    color: var(--White);
+                    background-color: var(--Primary);
+                    position: relative;
+                    &::after {
+                        content: "";
+                        bottom: -5px;
+                        position: absolute;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-bottom: 5px solid var(--Primary);
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+        &.color-2 {
+            .item-title {
+                &.active {
+                    background-color: var(--Color-2);
+                    &::after {
+                        border-bottom: 5px solid var(--Color-2);
+                    }
+                }
+            }
+        }
+        &.color-3 {
+            .item-title {
+                &.active {
+                    background-color: var(--Color-3);
+                    &::after {
+                        border-bottom: 5px solid var(--Color-3);
+                    }
+                }
+            }
+        }
+    }
+    &.style-2 {
+        .widget-menu-tab {
+            gap: 12px;
+            padding-top: 40px;
+            margin-top: -40px;
+        }
+        .item-title {
+            padding: 8px 20px;
+            width: 126px;
+            @include mixin.flex(center, center);
+            border-radius: 12px;
+            border: 1px solid var(--Line);
+            font-size: 16px;
+            line-height: 22.4px;
+            &:hover,
+            &.active {
+                background-color: var(--Primary);
+                color: var(--White);
+                font-weight: 700;
+            }
+        }
+        &.style-border-primary {
+            .item-title {
+                border-color: var(--Primary);
+                color: var(--Primary);
+                &:hover,
+                &.active {
+                    color: var(--White);
+                }
+            }
+        }
+    }
+}

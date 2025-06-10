@@ -1,0 +1,49 @@
+@use "../abstracts/variable";
+
+.text-logo {
+  font-family: 'Afacad', sans-serif; // Changed to Afacad
+  font-weight: 500; // Changed to Medium weight
+  font-size: 3.2rem;  // Initial size, adjust during testing
+  line-height: 1.2;   // Adjust during testing
+  color: var(--Heading); // Default color for light backgrounds
+  text-decoration: none !important; // Ensure no underlines on links
+  display: inline-block; // Prevent potential layout issues
+
+  &:hover {
+    color: var(--Primary); // Example hover effect, adjust if needed
+  }
+}
+
+// --- Logo Color Overrides ---
+
+// Homepage Header override (light theme body class)
+body.light-theme {
+  #header-main .header-logo .text-logo {
+    color: var(--White);
+  }
+}
+
+// Footer override (Footer background is always dark - Increased specificity)
+body #footer .footer-logo .text-logo {
+  color: #ffffff; // Use explicit white hex code
+}
+
+// Loan Process CTA override (dark background)
+.section-CTA.style-2 .logo .text-logo {
+  color: var(--White);
+}
+
+// FAQ CTA override (dark background)
+.section-contact-help .logo .text-logo {
+  color: var(--White);
+}
+
+// Projects empty box override (light background - uses default .text-logo color)
+// .section-project .project-item.empty .logo .text-logo {
+//   color: var(--Heading);
+// }
+
+// Mobile Menu override (Force black color for readability on white offcanvas header)
+.mobile-nav-wrap .offcanvas-title .text-logo {
+   color: #000000 !important; // Hardcoded black
+}

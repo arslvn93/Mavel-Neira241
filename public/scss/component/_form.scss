@@ -1,0 +1,459 @@
+@use "../abstracts/mixin";
+@use "../abstracts/variable";
+
+form {
+  position: relative;
+  z-index: 30;
+  .input.input-nl,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    outline: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 13px 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    background-color: var(--White);
+    border: 1px solid var(--Line);
+    border-radius: 16px;
+    color: var(--Text);
+    overflow: hidden;
+    height: 54px;
+    margin-bottom: 0;
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22.4px;
+      color: var(--Text);
+    }
+    &.style-default {
+      padding: 0;
+      border: 0 !important;
+      border-radius: 0;
+      background-color: transparent;
+    }
+    &.style-1 {
+      font-size: 15px;
+      border-radius: 0;
+      padding: 18px 0 3px;
+      border: 0;
+      border-bottom: 2px solid var(--Border);
+      color: var(--Soft-Text);
+    }
+  }
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    background-color: transparent;
+    overflow: hidden;
+    padding: 0;
+  }
+  textarea {
+    font-size: 16px;
+    line-height: 22.4px;
+    height: 148px;
+  }
+  .cols {
+    @include mixin.flex(center, center);
+    gap: 10px 24px;
+    width: 100%;
+    margin-bottom: 18px;
+    fieldset {
+      width: 100%;
+    }
+  }
+  label {
+    font-size: 16px;
+    line-height: 22.5px;
+    font-weight: 600;
+    color: var(--Heading);
+    margin-bottom: 12px;
+  }
+}
+
+.form-search {
+  position: relative;
+  fieldset input {
+    padding-left: 46px;
+  }
+  .button-submit {
+    position: absolute;
+    top: 54%;
+    transform: translateY(-50%);
+    left: 18px;
+    i {
+      font-size: 18px;
+      color: var(--Note);
+      font-weight: 700;
+    }
+  }
+  &.style-2 {
+    fieldset input {
+      height: 81px;
+      background-color: var(--Heading);
+      border: none;
+      padding-left: 57px;
+      color: var(--Text-white);
+      &::placeholder {
+        color: var(--Text-white);
+      }
+    }
+    .button-submit {
+      right: 8px;
+      left: unset;
+      top: 50%;
+    }
+    .tf-btn {
+      height: 65px;
+      border-radius: 16px;
+      border: 1px solid var(--Primary);
+      gap: 12px;
+      i {
+        font-size: 24px;
+        color: var(--White);
+      }
+    }
+    .icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 32px;
+    }
+  }
+}
+
+.box-send {
+  .heading-box {
+    margin-bottom: 24px;
+    .title {
+      margin-bottom: 11px;
+    }
+  }
+  label {
+    color: var(--Heading);
+    margin-bottom: 12px;
+  }
+  .message {
+    margin-bottom: 18px;
+  }
+
+  .checkbox-item {
+    margin-bottom: 20px;
+    label {
+      padding-left: 29px;
+      color: var(--Text);
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form-pre-approved {
+  .cols {
+    margin-bottom: 30px;
+    .wrap-input {
+      @include mixin.d-flex();
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+    .percent {
+      width: 64px;
+      flex: none;
+      margin-top: 31px;
+    }
+    .input-percent {
+      padding: 16px 14px;
+    }
+    .select {
+      width: 50%;
+    }
+    .interest-rate {
+      width: 50%;
+    }
+  }
+  > p {
+    margin-bottom: 33px;
+    color: rgba(44, 46, 51, 0.6);
+    span {
+      color: var(--Primary);
+      font-weight: 700;
+    }
+  }
+  .wrap-btn {
+    @include mixin.d-flex();
+    gap: 10px 24px;
+    flex-wrap: wrap;
+  }
+  .nice-select {
+    color: var(--Heading);
+    &::after {
+      width: 20px;
+      height: 20px;
+      background-image: url(/icons/arrow-down-2.svg);
+      right: 15px;
+    }
+  }
+  fieldset input {
+    &::placeholder {
+      color: var(--Heading);
+    }
+  }
+}
+
+.form-contact {
+  padding: 39px;
+  border: 1px solid var(--Line);
+  border-radius: 16px;
+  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.07);
+  background-color: var(--White);
+  .heading-section {
+    margin-bottom: 48px;
+  }
+  .cols {
+    margin-bottom: 32px;
+    gap: 33px;
+  }
+  fieldset {
+    input {
+      &::placeholder {
+        color: var(--Note);
+      }
+    }
+  }
+  textarea {
+    border-radius: 16px;
+    margin-bottom: 32px;
+  }
+  .phone {
+    width: 50%;
+  }
+  .select {
+    width: 50%;
+  }
+  .nice-select {
+    color: var(--Heading);
+  }
+}
+
+.form-contact-agent {
+  padding: 28px 30px 29px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.05);
+  .wrap-btn {
+    @include mixin.d-flex();
+    gap: 24px;
+  }
+  fieldset {
+    margin-bottom: 12px;
+    input,
+    textarea,
+    input::placeholder,
+    textarea::placeholder {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+  textarea {
+    height: 130px;
+    margin-bottom: 18px;
+  }
+  &.style-2 {
+    box-shadow: unset;
+    border: 1px solid var(--Line);
+  }
+}
+
+.form-contact-seller {
+  background-color: var(--White);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--Line);
+  .seller-info {
+    @include mixin.d-flex();
+    align-items: center;
+    gap: 19px;
+    margin-bottom: 28px;
+    .avartar {
+      border-radius: 999px;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      flex: none;
+    }
+    .name {
+      margin-bottom: 12px;
+    }
+    .contact {
+      li {
+        @include mixin.d-flex();
+        align-items: center;
+        gap: 4px;
+        color: var(--Text);
+        &:not(:last-child) {
+          margin-bottom: 6px;
+        }
+        i {
+          font-size: 16px;
+        }
+        span {
+          line-height: 19.6px;
+          color: var(--Primary);
+        }
+        a {
+          color: var(--Text);
+          &:hover {
+            color: var(--Primary);
+          }
+        }
+      }
+    }
+  }
+  fieldset {
+    input,
+    textarea,
+    textarea::placeholder,
+    input::placeholder {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+  textarea {
+    height: 130px;
+  }
+}
+
+.form-add-review {
+  .checkbox-item {
+    label {
+      font-size: 14px;
+      line-height: 19.6px;
+      font-weight: 400;
+    }
+  }
+}
+
+.form-advanced-search {
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(236, 236, 236, 1);
+  background-color: var(--White);
+  fieldset {
+    position: relative;
+    input,
+    input::placeholder {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .icon {
+      position: absolute;
+      font-size: 16px;
+      right: 16px;
+      top: 57%;
+      transform: translateY(-50%);
+    }
+  }
+  .nice-select {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.sib-form {
+  padding: 0;
+  font-family: variable.$font-main;
+  #sib-container,
+  .sib-form-block {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+.sib-form {
+  fieldset {
+    .input.input-nl {
+      padding: 0 18px;
+      max-width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      background-color: transparent;
+    }
+  }
+  .clickable__icon {
+    height: 1.5rem;
+    vertical-align: bottom;
+    width: 1.5rem;
+  }
+  .sib-text-form-block {
+    margin-bottom: 16px;
+  }
+  .entry__error {
+    font-size: 12px;
+    line-height: 16.8px;
+  }
+  .form__label-row {
+    margin-top: 10px;
+  }
+  .tf-btn {
+    height: 54px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 1px solid var(--Primary) !important;
+    &:hover {
+      border: 1px solid var(--Primary);
+    }
+  }
+  .checkbox-item {
+    label {
+      .btn-checkbox {
+        &::after {
+          top: -2px;
+        }
+      }
+    }
+    span {
+      color: var(--Text);
+    }
+  }
+}
+
+.form-get-in-touch {
+  padding: 20px;
+  border-radius: 16px;
+  display: grid;
+  gap: 20px;
+  background-color: var(--White);
+  .grid-2 {
+    gap: 15px;
+  }
+  fieldset input {
+    border-radius: 999px;
+  }
+  &.style-2 {
+    background-color: var(--Heading);
+    fieldset input,
+    textarea {
+      background: #ffffff1f;
+      border: none;
+      color: var(--Note);
+      &::placeholder {
+        color: var(--Note);
+      }
+    }
+  }
+}

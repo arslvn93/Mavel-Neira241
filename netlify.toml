@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  # The plugin will take care of routing/SSR,
+  # so you can point `publish` at .next
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

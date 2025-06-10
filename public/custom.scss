@@ -1,0 +1,222 @@
+.swiper.wrap-partners .swiper-wrapper {
+  animation-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+.swiper.autoplay-linear .swiper-wrapper {
+  animation-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+.partner-slider-reverse {
+  transform: rotate(180deg);
+  .partner-item {
+    transform: rotate(180deg);
+  }
+}
+.section-testimonials.style-4 .wrap::before,
+.section-testimonials.style-4 .wrap::after {
+  z-index: 10;
+}
+.rc-slider .rc-slider-handle {
+  border: solid 2px var(--Primary);
+  opacity: 1 !important;
+  background-color: #fff !important;
+  width: 20px;
+  border-radius: 10px !important;
+  height: 20px;
+
+  margin-top: -9px;
+}
+
+.rc-slider .rc-slider-handle:hover {
+  border-color: var(--Primary);
+}
+
+.rc-slider .rc-slider-handle-dragging {
+  border-color: var(--Primary) !important;
+  box-shadow: none !important;
+}
+
+.rc-slider .rc-slider-track,
+.rc-slider .rc-slider-tracks {
+  background-color: var(--Primary);
+}
+.header.header-10:not(.header-sticky) {
+  .row > * {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .tf-container {
+    width: 100%;
+  }
+  .header-inner-wrap {
+    justify-content: flex-start;
+  }
+  .header-right {
+    margin-left: auto;
+  }
+}
+.wow.chars.splitting {
+  direction: ltr !important;
+}
+.gm-style .gm-style-iw-c {
+  padding: 0 !important;
+}
+.gm-style-iw-d {
+  overflow: hidden !important;
+  div {
+    width: 100%;
+  }
+}
+.gm-style-iw-ch {
+  display: none;
+}
+.gm-style-iw-chr {
+  position: absolute;
+  right: 5px;
+  z-index: 2;
+}
+.map-listing-item {
+  .list-btn.flex.gap-8 {
+    justify-content: center;
+  }
+}
+.gm-style-iw.gm-style-iw-c {
+  background-color: transparent !important;
+}
+.sw-swiper-992,
+.sw-swiper-767,
+.sw-swiper-576 {
+  &.swiper-initialized {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .sw-swiper-992 {
+    display: none;
+    &.swiper-initialized {
+      display: block;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .sw-swiper-767 {
+    display: none;
+    &.swiper-initialized {
+      display: block;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .sw-swiper-576 {
+    display: none;
+    &.swiper-initialized {
+      display: block;
+    }
+  }
+}
+.home-8-testimonials,
+.home-10-testimonials {
+  .swiper-slide {
+    height: fit-content !important;
+  }
+  @media (max-width: 767px) {
+    .slider-1,
+    .slider-2 {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  #footer {
+    .footer-col-block {
+      .title-mobile {
+        transition: 0.3s;
+        margin-bottom: 0px;
+      }
+      .tf-collapse-content {
+        overflow-y: hidden;
+        display: block;
+        height: 0;
+        transition: 0.5s;
+      }
+      &.open {
+        .title-mobile {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+.tfSubscribeMsg {
+  max-height: 0px;
+  // transition: 0.4s;
+  overflow: hidden;
+  &.active {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: 180px;
+  }
+}
+.fadeInTab {
+  animation: fadeInTab 0.5s ease-in-out;
+}
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.section-CTA:not(.style-2) {
+  @media (max-width: 992px) {
+    .content-inner {
+      flex-wrap: wrap;
+    }
+  }
+}
+.form-pre-approved .nice-select::after {
+  width: 20px;
+  height: 20px;
+  background-image: none;
+  right: 15px;
+}
+@media (max-width: 992px) {
+  .tf-spacing-1,
+  .tf-spacing-2,
+  .tf-spacing-3,
+  .tf-spacing-4,
+  .tf-spacing-5,
+  .tf-spacing-6,
+  .tf-spacing-7,
+  .tf-spacing-8,
+  .tf-spacing-9,
+  .tf-spacing-10,
+  .tf-spacing-11,
+  .tf-spacing-12,
+  .tf-spacing-14,
+  .tf-spacing-15 {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .testimonial-heading {
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .testimonial-heading {
+    padding-bottom: 20px;
+  }
+}
+.home-10-testimonials,
+.home-8-testimonials {
+  .swiper {
+    overflow-y: hidden;
+    max-height: 100vh !important;
+    @media (max-width: 787px) {
+      max-height: 896px !important;
+    }
+  }
+}

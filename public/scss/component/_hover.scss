@@ -1,0 +1,178 @@
+@use "../abstracts/mixin";
+
+.hover-tooltip {
+    position: relative;
+    .tooltip {
+        position: absolute;
+        white-space: nowrap;
+        padding: 0px 8.5px;
+        height: 25px;
+        border-radius: 2px;
+        bottom: calc(100% + 7px);
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        color: var(--White);
+        max-width: 250px;
+        width: max-content;
+        background-color: var(--Heading);
+        transition: opacity 0.3s ease, visibility 0.3s ease,
+            transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24),
+            -webkit-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+        z-index: 5;
+        font-size: 12px;
+        line-height: 22px;
+        &::before {
+            content: "";
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            top: 20px;
+            position: absolute;
+            background: var(--Heading);
+            width: 8px;
+            height: 8px;
+            z-index: -1;
+        }
+    }
+    &.style-2 {
+        .tooltip {
+            z-index: 202;
+            right: calc(100% + 10px);
+            top: 50%;
+            transform: translateY(-50%);
+            left: unset;
+            transition: opacity 0.3s ease, visibility 0.3s ease,
+                transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24),
+                -webkit-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+            &::before {
+                left: unset;
+                right: -3px;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+            }
+            &:hover {
+            }
+        }
+    }
+    &:hover {
+        .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.hover-img {
+    .image-wrap,
+    .img-style {
+        overflow: hidden;
+        img {
+            object-fit: cover;
+            -webkit-transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+            transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+        }
+    }
+
+    &:hover {
+        .image-wrap,
+        .img-style {
+            img {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1);
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+        }
+    }
+}
+
+.hover-image-2 {
+    .img-style,
+    .image-wrap {
+        position: relative;
+        overflow: hidden;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 0%;
+            left: 50%;
+            top: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%) rotate(-45deg);
+            z-index: 1;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 1s;
+        }
+    }
+    &:hover {
+        .img-style,
+        .image-wrap {
+            &:after {
+                height: 250%;
+                transition: all 600ms linear;
+                background-color: transparent;
+            }
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.hover-img-rotate {
+    .image-wrap {
+        overflow: hidden;
+        border-radius: 8px;
+        img {
+            @include mixin.transition3;
+        }
+    }
+    &:hover {
+        .image-wrap {
+            img {
+                transform: scale(1.1) rotate(3deg);
+            }
+        }
+    }
+}
+
+.hover-img-wrap {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: rgb(0 0 0);
+        transition: 0.25s;
+        z-index: 3;
+        opacity: 0.1;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -100%;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: rgb(0 0 0);
+        transition: 0.25s;
+        z-index: 3;
+        opacity: 0.1;
+    }
+    &:hover {
+        &::after {
+            bottom: 0;
+            transition-delay: 0.25s;
+        }
+        &::before {
+            top: 0;
+        }
+    }
+}
