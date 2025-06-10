@@ -7,41 +7,41 @@
 // Define agent details separately to avoid initialization errors
 const agentDetails = {
   /** @type {string} Agent's full name (e.g., "Mike Henry"). Used widely. */
-  name: "Mike Henry", // Resolved: Kept remote change
+  name: "Mavel Neira",
   /** @type {string} Agent's first name (e.g., "Mike"). Used in informal contexts. */
-  firstName: "Mike", // Resolved: Kept remote change
+  firstName: "Mavel",
   /** @type {string} Agent's professional title (e.g., "Brampton Realtor"). Used in copyright, potentially titles. */
-  title: "Brampton Realtor", // Resolved: Kept remote change
+  title: "Etobicoke Realtor",
   /** @type {string} Agent's professional designation (e.g., "Real Estate Sales Representative", "Broker", "Realtor"). */
-  designation: "Real Estate Sales Representative", // Resolved: Kept local addition
+  designation: "Realtor",
   /** @type {string} Primary city/town served (e.g., "Brampton"). Used in descriptions, titles. */
-  location: "Brampton", // Resolved: Kept remote change
+  location: "Etobicoke",
   /** @type {string} Broader region served (if applicable, e.g., "Peel Region"). Used in FAQ. */
-  region: "Peel Region",
+  region: "Toronto",
   /** @type {number} Agent's years of experience. Used in About section, potentially counters. */
   experienceYears: 10,
   /** @type {string} Agent's primary contact phone number. Used in Footer, Contact forms/sidebars. */
-  phone: "647-881-4044", // Resolved: Kept remote change
+  phone: "647-203-1228",
   /** @type {string} Agent's primary contact email address. Used in Footer, Contact forms/sidebars. */
-  email: "mike.solditquick@gmail.com", // Resolved: Kept remote change
+  email: "sellwithmavel@gmail.com",
   /** @type {string} Agent's primary office address. */
-  address: "276 DANFORTH AVENUE", // Resolved: Kept remote change
+  address: "500 - 36 Distillery LaneToronto, ON M5A 3C4",
   /** @type {string} Name of the brokerage the agent is affiliated with. */
-  brokerageName: "REAL Broker", // Resolved: Kept local addition
-  /** @type {string} File path for the standard agent headshot. Relative to /public. */
-  headshotImageSrc: "/images/agent/headshot.png", // Placeholder - Ensure image exists at this path
-  /** @type {string} File path for the agent headshot with no background. Relative to /public. */
-  headshotNoBgImageSrc: "/images/agent/headshot_no_bg.png", // Placeholder - Ensure image exists at this path
+  brokerageName: "Property.ca Inc.",
+  /** @type {string} URL for the standard agent headshot from AWS. */
+  headshotImageSrc: "/images/agent/mavel3.png",
+  /** @type {string} URL for the agent headshot with no background (constructed from AWS URL). */
+  headshotNoBgImageSrc: "/images/agent/headshot_bg.png",
   /**
    * @description List of social media profiles for the footer.
    * @type {Array<{name: string, url: string, iconClass: string}>}
    */
   socialLinks: [
     // Provide actual URLs for the agent's profiles
-    { name: "Facebook", url: "https://www.facebook.com/Mike.Henry.Realestate/", iconClass: "icon-fb" }, // Resolved: Kept remote change
+    { name: "Facebook", url: "#", iconClass: "icon-fb" },
     { name: "Twitter", url: "#", iconClass: "icon-X" },
     { name: "LinkedIn", url: "#", iconClass: "icon-linked" },
-    { name: "Instagram", url: "http://instagram.com/mike.henry.realestate", iconClass: "icon-ins" } // Resolved: Kept remote change
+    { name: "Instagram", url: "#", iconClass: "icon-ins" }
   ]
 };
 
@@ -249,48 +249,22 @@ export const siteContent = {
      */
     // Dynamically update blog post placeholders
     posts: [
-    { id: 4, imageSrc: "/images/blog/blog-grid-1.jpg", alt: `Etobicoke neighbourhood`, tag: "Buying Tips", date: "June 1, 2025", title: `5 Tips for First-Time Homebuyers in Etobicoke`, description: `Navigate Etobicoke's buyer-friendly market with insider strategies on government programs, neighborhood selection, and building your expert team for homeownership success`},
-    { id: 5, imageSrc: "/images/blog/blog-grid-2.jpg", alt: "Condo building", tag: "Market Update", date: "June 1, 2025", title: `Understanding Etobicoke's Condo Market Trends`, description: `Discover why Etobicoke condos offer $90,000+ savings compared to downtown Toronto, plus essential insights on maintenance fees, neighborhoods, and investment potential in today's market.` },
-    { id: 6, imageSrc: "/images/blog/blog-grid-3.jpg", alt: "House exterior", tag: "Selling Tips", date: "June 6, 2025", title: `How to Prepare Your Etobicoke Home for a Quick Sale`, description: `Transform your property into a buyer magnet with proven staging techniques, strategic pricing, and professional presentation strategies that sell homes in 28-36 days.` }
+      { id: 4, imageSrc: "/images/blog/blog-grid-1.jpg", alt: `${agentDetails.location} neighbourhood`, tag: "Buying Tips", date: "October 15, 2024", title: `5 Tips for First-Time Homebuyers in ${agentDetails.location}`, description: `Navigating the ${agentDetails.location} market for the first time? Here are key tips...` },
+      { id: 5, imageSrc: "/images/blog/blog-grid-2.jpg", alt: "Condo building", tag: "Market Update", date: "October 10, 2024", title: `Understanding ${agentDetails.location}'s Condo Market Trends`, description: "A look at recent trends and what they mean for condo buyers and sellers..." },
+      { id: 6, imageSrc: "/images/blog/blog-grid-3.jpg", alt: "House exterior", tag: "Selling Tips", date: "October 5, 2024", title: `How to Prepare Your ${agentDetails.location} Home for a Quick Sale`, description: "Maximize your home's appeal with these essential preparation steps..." }
     ],
-    postDetails: [
-      {
-        id: 4,
-        paragraph1: "Ready to make Etobicoke your home? This vibrant Toronto community offers the perfect blend of lakefront living and urban convenience, making it an ideal launching pad for your homeownership journey.",
-        paragraph2: "With home prices averaging $1.04-$1.24 million compared to Toronto's $1.16 million average, Etobicoke delivers exceptional value while keeping you connected to everything the GTA has to offer.\n\nThe current market strongly favors buyers like you, with 42% more inventory available and homes selling closer to asking price than in recent years. This means more choice, better negotiating power, and time to find the perfect fit. Plus, with the Bank of Canada's seven consecutive rate cuts bringing borrowing costs down, your buying power has significantly improved.",
-        quote: "Let's dive into five essential strategies that'll help you navigate Etobicoke's market with confidence.",
-        quoteAuthor: `${agentDetails.name}`,
-        paragraph3: "Maximize your down payment power with smart government programs.\n\nYour government wants to help you succeed, and 2024 brought game-changing improvements to first-time buyer programs. The Home Buyers' Plan now allows you to withdraw up to $60,000 from your RRSP (up from $35,000), giving you substantially more buying power. Combined with the new First Home Savings Account offering $40,000 in lifetime contributions with full tax benefits, you could potentially access $100,000 in tax-advantaged funds.",
-        paragraph4: "In Toronto, you'll also benefit from generous land transfer tax rebates totaling up to $8,475 when you combine provincial and municipal rebates. For a typical Etobicoke condo around $550,000, this rebate covers your entire land transfer tax burden. Remember, these programs are one-time opportunities, so understanding exactly how they work ensures you maximize every dollar available.\n\nThe key is planning ahead. Your RRSP funds must sit for 90 days before withdrawal, and FHSA contributions are tax-deductible in the year you make them. Start these accounts early to build your down payment while reducing your tax bill.",
-        quote2: "Choose your Etobicoke neighborhood strategically.",
-        quoteAuthor2: `${agentDetails.name}`,
-        paragraph5: "Etobicoke isn't just one market – it's a collection of distinct communities, each offering different lifestyles and price points. Understanding these differences helps you find the perfect match for your budget and priorities.\n\nFor budget-conscious buyers, Long Branch and Mimico offer incredible lakefront access with GO Transit connectivity to downtown in just 15-20 minutes. These areas feature a mix of condos starting around $500,000 and detached homes averaging $976,000-$1.24 million. You'll enjoy small-town charm with big-city convenience, plus ongoing development that's enhancing property values.\n\nIf you're seeking prestige and established amenities, The Kingsway delivers tree-lined streets and Tudor-style architecture, though prices reflect this premium location. For the best of both worlds, consider Islington or central Etobicoke areas where you'll find excellent TTC access, reasonable pricing, and strong community infrastructure including top-rated schools and recreational facilities.\n\nEach neighborhood offers unique advantages, from Humber Bay's waterfront condos to Alderwood's family-friendly streets. Your choice should align with your commute, lifestyle preferences, and long-term plans rather than just price alone."
-      },
-      {
-        id: 5,
-        paragraph1: "Etobicoke's condo market is experiencing a fascinating transformation that creates both challenges and opportunities for savvy buyers. With average condo prices sitting $90,000 below downtown Toronto levels and a dramatic shift toward buyer-friendly conditions, understanding these trends helps you make informed decisions in one of the GTA's most dynamic markets.",
-        paragraph2: "Current data reveals Etobicoke condos averaging $535,000-$683,000 compared to Toronto's $726,000-$770,000 range, representing exceptional value for lakefront and transit-connected living. However, the market has seen a 24% decline in condo sales year-over-year, creating a unique environment where prepared buyers have unprecedented choice and negotiating power.",
-        quote: "Let's explore what these trends mean for your condo buying journey and how to capitalize on current conditions.",
-        quoteAuthor: `${agentDetails.name}`,
-        paragraph3: "Market fundamentals show clear buyer advantages.\n\nThe numbers tell a compelling story of opportunity. Etobicoke condos are spending an average of 36 days on market compared to just 15 days in early 2023, giving you time to carefully evaluate options without the frantic bidding wars of recent years. Properties are selling at 99% of asking price, meaning realistic pricing has become essential for sellers.",
-        paragraph4: "This shift reflects broader market dynamics including higher inventory levels – up 71% compared to 2023 – and changing buyer behavior. The stress of competitive bidding has been replaced by thoughtful evaluation and negotiation, allowing you to make conditional offers for financing and inspections that protect your interests.\n\nGeographic variations within Etobicoke create different opportunities. Humber Bay Shores commands premium prices for waterfront views but offers resort-style living with world-class amenities. Islington and central areas provide excellent value with strong transit connections, while emerging areas like Six Points (downtown Etobicoke) feature 35+ new towers approved or under construction, suggesting significant future development.",
-        quote2: "Understanding maintenance fees and long-term costs.",
-        quoteAuthor2: `${agentDetails.name}`,
-        paragraph5: "One of the biggest condo considerations involves ongoing monthly fees, which in Etobicoke typically range from $420-$900 for a 700-square-foot unit. These fees aren't just expenses – they're investments in your building's long-term health and your quality of life.\n\nWell-managed buildings with reasonable fees often provide better value than those with suspiciously low costs. A building with $525 monthly fees that includes heat, water, and excellent amenities offers better value than one with $350 fees that will require special assessments for deferred maintenance.\n\nReserve fund studies reveal a building's true financial health. Look for buildings with adequate reserves (typically 25-30% of the annual budget) and recent comprehensive studies. Red flags include multiple special assessments, negative reserve fund balances, or fees significantly above or below neighborhood averages.\n\nConsider the total cost of ownership when comparing condos to houses. While your monthly fees might seem high, they replace many homeownership costs like snow removal, landscaping, exterior maintenance, and often major utilities. For many first-time buyers, the predictable monthly cost provides better budget certainty than the variable expenses of house ownership."
-      },
-      {
-        id: 6,
-        paragraph1: "Selling your Etobicoke home in today's market requires a completely different approach than the frenzied bidding wars of recent years. With homes now taking an average of 28-36 days to sell and properties moving at 99% of asking price, success depends on professional presentation, strategic pricing, and understanding what today's buyers actually want.",
-        paragraph2: "The good news? Properly prepared homes still sell quickly and for strong prices, even in this more balanced market. The key is adapting to current conditions where buyers have more choice, take time for careful evaluation, and expect excellent value for their investment. Smart sellers who understand these dynamics consistently outperform those clinging to outdated strategies.",
-        quote: "Here's your complete guide to positioning your Etobicoke property for maximum appeal and fastest sale in 2024-2025 market conditions.",
-        quoteAuthor: `${agentDetails.name}`,
-        paragraph3: "Master the art of strategic pricing.\n\nIn today's market, pricing accuracy determines everything. Overpriced homes sit on the market and eventually sell for less than properties priced correctly from day one. Buyers now have time to compare multiple options, and overpriced listings quickly become stale inventory that raises questions about underlying problems.\n\nStart with a comprehensive market analysis of recent sales in your immediate area, not just Etobicoke broadly. A Humber Bay waterfront condo commands different pricing than a similar unit in Islington, even though both are technically \"Etobicoke condos.\" Look at properties that sold within the past 90 days, particularly those with similar features, sizes, and conditions.",
-        paragraph4: "Consider the absorption rate in your specific neighborhood and property type. If similar homes are taking 35+ days to sell, price aggressively to generate immediate interest. A home priced 3-5% below comparable recent sales often sells quickly and for more than an overpriced listing that sits for months before eventual price reductions.\n\nRemember that motivated buyers still exist – they're just more selective. Price to attract these buyers while leaving minimal room for excessive negotiation. The goal is quick sale at fair market value, not maximum possible price after months of market exposure.",
-        quote2: "Create irresistible visual appeal through professional staging.",
-        quoteAuthor2: `${agentDetails.name}`,
-        paragraph5: "91% of professionally staged homes sell within one month, making staging investment rather than expense in today's competitive inventory environment. Etobicoke buyers expect move-in ready properties, and staging helps them envision their lifestyle in your space.\n\nFor condos, space maximization becomes critical. Remove 30-50% of your furniture to make rooms appear larger, and choose appropriately scaled pieces that don't overwhelm smaller spaces. Replace oversized furniture with sleek, streamlined alternatives, and eliminate anything that blocks natural light or makes spaces feel cramped.\n\nHouse staging focuses on highlighting your property's best features while creating clear traffic flow throughout rooms. Arrange furniture to showcase architectural elements like fireplaces, built-ins, or high ceilings, and ensure easy access to windows and views. Use neutral color schemes – light greys, beiges, and greiges – that appeal to the broadest range of buyers.\n\nProfessional staging companies understand current buyer preferences and have furniture inventory specifically designed for showing homes. The investment typically ranges from $2,000-$5,000 but often returns 3-6% higher sale prices and significantly faster sales times."
-      }
-    ],
+    /**
+     * @description Placeholder content for the main body of a blog post on the detail page (`BlogDetails.jsx`).
+     * @type {{paragraph1: string, quote: string, quoteAuthor: string, paragraph2: string, paragraph3?: string}}
+     */
+    detailPlaceholder: {
+      // Guidance: Provide generic placeholder text to be replaced with actual blog content.
+      paragraph1: "Detailed content about this blog post topic coming soon...",
+      quote: "A relevant quote could go here.",
+      quoteAuthor: "Source",
+      paragraph2: "More details and insights related to the blog post topic.",
+      paragraph3: "Further insights and concluding thoughts." // Optional third paragraph
+    },
     /** @type {string} Title for the ad in the blog detail sidebar. */
     sidebarAdTitle: `Ready to Buy or Sell in ${agentDetails.location}?`, // Dynamically constructed
     /** @type {string} Description for the ad in the blog detail sidebar. */
@@ -384,7 +358,7 @@ export const siteContent = {
     /** @type {string} Introductory text for the "Process" section. */
     processDescription: "I'll get to know you to understand your selling goals, and explain the selling process so you know what to expect.",
     /** @type {string} Text used below each of the 3 process steps. */
-    processStepDescription: "Your responses will help connect you with the right resources. Shortly after your lender is selected, they’ll contact you to discuss options for financing your future home.",
+    processStepDescription: "Your responses will help connect you with the right resources. Shortly after your lender is selected, they'll contact you to discuss options for financing your future home.",
     /** @type {string} Heading for the "Loan Calculator" section. */
     calculatorTitle: "Calculate Mortgage Payments",
     /** @type {string} Text below the calculator heading. */
@@ -396,7 +370,7 @@ export const siteContent = {
    */
   notFound: {
     /** @type {string} The main message displayed. Can include HTML `<br />`. */
-    message: "I searched everywhere but couldn’t find what you’re looking for. Let’s find <br />a better place for you to go."
+    message: "I searched everywhere but couldn't find what you're looking for. Let's find <br />a better place for you to go."
   },
 
   /**
@@ -410,7 +384,7 @@ export const siteContent = {
     /** @type {string} Button text for the main CTA component. */
     ctaButtonText: "Contact Agent Today", // Placeholder - Constructed dynamically in Cta.jsx
     /** @type {string} Title for the Brands/Partners section (`Brands.jsx`). */
-    brandsTitle: "Let’s Work Together",
+    brandsTitle: "Let's Work Together",
     /** @type {string} Description for the Brands/Partners section. */
     brandsDescription: "Let's discuss how my expertise can help you achieve your real estate goals."
   }
