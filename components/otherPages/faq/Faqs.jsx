@@ -14,8 +14,7 @@ export default function Faqs() {
     },
     siteContent.agent.email
   );
-
-  // New Q&A Data for Mike Henry, grouped by category
+  
   const faqCategories = [
     {
       title: `About ${siteContent.agent.firstName} & Her Services`,
